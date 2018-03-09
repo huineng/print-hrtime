@@ -1,13 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/robrich/pretty-hrtime.png?branch=master)](https://travis-ci.org/robrich/pretty-hrtime)
-[![Dependency Status](https://david-dm.org/robrich/pretty-hrtime.png)](https://david-dm.org/robrich/pretty-hrtime)
-
-pretty-hrtime
-============
-
-[process.hrtime()](http://nodejs.org/api/process.html#process_process_hrtime) to words
-
-Usage
------
+# Usage
 
 ```javascript
 var prettyHrtime = require('pretty-hrtime');
@@ -30,8 +21,7 @@ Note: process.hrtime() has been available since 0.7.6.
 See [http://nodejs.org/changelog.html](http://nodejs.org/changelog.html)
 and [https://github.com/joyent/node/commit/f06abd](https://github.com/joyent/node/commit/f06abd).
 
-LICENSE
--------
+## LICENSE
 
 (MIT License)
 

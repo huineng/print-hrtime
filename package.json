@@ -1,5 +1,5 @@
 {
-  "name": "pretty-hrtime",
+  "name": "print-hrtime",
   "description": "process.hrtime() to words",
   "version": "1.0.3",
   "homepage": "https://github.com/robrich/pretty-hrtime",
@@ -11,12 +11,11 @@
     "benchmark"
   ],
   "devDependencies": {
-    "jshint": "^2.9.4",
-    "mocha": "^3.1.2",
-    "should": "^11.2.1"
+    "tslint-eslint-rules": "^5.1.0"
   },
   "scripts": {
-    "test": "mocha && jshint ."
+    "build": "tsc -p ./tsconfig.json",
+    "test": ""
   },
   "engines": {
     "node": ">= 0.8"
