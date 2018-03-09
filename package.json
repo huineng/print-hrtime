@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/huineng/print-hrtime",
   "repository": "git://github.com/robrich/pretty-hrtime.git",
-  "author": "Rob Richardson (http://robrich.org/)",
+  "author": "guyhuinen@gmail.com",
   "main": "./index.js",
   "keywords": [
     "hrtime",

@@ -1,1 +1,1 @@
-export declare const printTime: any;
+export declare const printHRTime: any;

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var minimalDesc = ['h', 'min', 's', 'ms', 'μs', 'ns'];
 var verboseDesc = ['hour', 'minute', 'second', 'millisecond', 'microsecond', 'nanosecond'];
 var convert = [60 * 60, 60, 1, 1e6, 1e3, 1];
-exports.printTime = function (source, opts) {
+exports.printHRTime = function (source, opts) {
     var verbose, precise, i, spot, sourceAtStep, valAtStep, decimals, strAtStep, results, totalSeconds;
     verbose = false;
     precise = false;
