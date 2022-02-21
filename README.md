@@ -1,25 +1,25 @@
 # Usage
 
-```javascript
-var prettyHrtime = require('pretty-hrtime');
+```typescript
+import { printHRTime } from "print-hrtime";
 
-var start = process.hrtime();
+const start = process.hrtime();
 // do stuff
-var end = process.hrtime(start);
+const end = process.hrtime(start);
 
-var words = prettyHrtime(end);
+const words = prettyHrtime(end);
 console.log(words); // '1.2 ms'
 
-words = prettyHrtime(end, {verbose:true});
+words = prettyHrtime(end, { verbose: true });
 console.log(words); // '1 millisecond 209 microseconds'
 
-words = prettyHrtime(end, {precise:true});
+words = prettyHrtime(end, { precise: true });
 console.log(words); // '1.20958 ms'
 ```
 
-Note: process.hrtime() has been available since 0.7.6.
-See [http://nodejs.org/changelog.html](http://nodejs.org/changelog.html)
-and [https://github.com/joyent/node/commit/f06abd](https://github.com/joyent/node/commit/f06abd).
+## Credits
+
+This is an adaptation of the package [pretty-hrtime] (https://github.com/robrich/pretty-hrtime) rewritten in typescript.
 
 ## LICENSE
 

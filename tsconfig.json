@@ -1,13 +1,12 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": true,
-        "outDir": "./",
-        "rootDir": "./",
-        "strict": true
-    },
-    "files": [
-        "index.ts"
-    ]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./",
+    "rootDir": "./",
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "files": ["index.ts"]
 }

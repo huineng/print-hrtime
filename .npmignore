@@ -9,5 +9,5 @@ components
 test
 .travis.yml
 tsconfig.json
-tslint.json
-.jshintignore
+.eslintrc.js
+.vscode

@@ -1,11 +1,18 @@
-/*jshint node:true */
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var minimalDesc = ['h', 'min', 's', 'ms', 'μs', 'ns'];
-var verboseDesc = ['hour', 'minute', 'second', 'millisecond', 'microsecond', 'nanosecond'];
-var convert = [60 * 60, 60, 1, 1e6, 1e3, 1];
-exports.printHRTime = function (source, opts) {
-    var verbose, precise, i, spot, sourceAtStep, valAtStep, decimals, strAtStep, results, totalSeconds;
+exports.printHRTime = void 0;
+const minimalDesc = ["h", "min", "s", "ms", "μs", "ns"];
+const verboseDesc = [
+    "hour",
+    "minute",
+    "second",
+    "millisecond",
+    "microsecond",
+    "nanosecond",
+];
+const convert = [60 * 60, 60, 1, 1e6, 1e3, 1];
+const printHRTime = (source, opts) => {
+    let verbose, precise, i, spot, sourceAtStep, valAtStep, decimals, strAtStep, results, totalSeconds;
     verbose = false;
     precise = false;
     if (opts) {
@@ -13,18 +20,18 @@ exports.printHRTime = function (source, opts) {
         precise = opts.precise || false;
     }
     if (!Array.isArray(source) || source.length !== 2) {
-        return '';
+        return "";
     }
-    if (typeof source[0] !== 'number' || typeof source[1] !== 'number') {
-        return '';
+    if (typeof source[0] !== "number" || typeof source[1] !== "number") {
+        return "";
     }
     // normalize source array due to changes in node v5.4+
     if (source[1] < 0) {
         totalSeconds = source[0] + source[1] / 1e9;
-        source[0] = parseInt(totalSeconds);
+        source[0] = Math.floor(totalSeconds);
         source[1] = parseFloat((totalSeconds % 1).toPrecision(9)) * 1e9;
     }
-    results = '';
+    results = "";
     // foreach unit
     for (i = 0; i < 6; i++) {
         spot = i < 3 ? 0 : 1; // grabbing first or second spot in source array
@@ -48,22 +55,23 @@ exports.printHRTime = function (source, opts) {
             else {
                 strAtStep = valAtStep.toString();
             }
-            if (strAtStep.indexOf('.') > -1 && strAtStep[strAtStep.length - 1] === '0') {
-                strAtStep = strAtStep.replace(/\.?0+$/, ''); // remove trailing zeros
+            if (strAtStep.indexOf(".") > -1 &&
+                strAtStep[strAtStep.length - 1] === "0") {
+                strAtStep = strAtStep.replace(/\.?0+$/, ""); // remove trailing zeros
             }
             if (results) {
-                results += ' '; // append space if we have a previous value
+                results += " "; // append space if we have a previous value
             }
             results += strAtStep; // append the value
             // append units
             if (verbose) {
-                results += ' ' + verboseDesc[i];
-                if (strAtStep !== '1') {
-                    results += 's';
+                results += " " + verboseDesc[i];
+                if (strAtStep !== "1") {
+                    results += "s";
                 }
             }
             else {
-                results += ' ' + minimalDesc[i];
+                results += " " + minimalDesc[i];
             }
             if (!verbose) {
                 break; // verbose gets as many groups as necessary, the rest get only one
@@ -72,3 +80,4 @@ exports.printHRTime = function (source, opts) {
     }
     return results;
 };
+exports.printHRTime = printHRTime;
